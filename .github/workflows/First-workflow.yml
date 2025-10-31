@@ -5,9 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
-        uses: echo "checkout repository........"
-
-        
+        run: echo "checkout repository........"
   Build:
     runs-on: ubuntu-latest
     steps: 
