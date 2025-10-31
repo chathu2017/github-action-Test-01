@@ -1,7 +1,7 @@
 name: nodejs-project
 on: push
 jobs:
-  stage-01:
+  nodejs-tests:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
@@ -10,4 +10,15 @@ jobs:
         run: npm ci
       - name: run-tests
         run: npm test  
+        
+  Build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: build-project
+        run: npm run build
+  Deployement:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: build-project
+        run: echo "Deployement Done........"   
 
