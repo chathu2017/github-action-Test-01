@@ -1,5 +1,5 @@
 name: nodejs-project
-on: workflow_dispatch
+on: push
 jobs:
   stage-01:
     runs-on: ubuntu-latest
