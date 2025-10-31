@@ -4,8 +4,8 @@ jobs:
   stage-01:
     runs-on: ubuntu-latest
     steps: 
-      - name: initialization
-        run: echo "Initialization"
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: npm-installation
         run: npm install
         working-directory: '02 STARTING PROJECT'
