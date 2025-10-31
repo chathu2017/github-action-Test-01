@@ -18,6 +18,8 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4 
+      - name: npm-installation
+        run: npm ci   
       - name: build-project
         run: npm run build
       - name: build-project
