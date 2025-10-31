@@ -8,3 +8,4 @@ jobs:
         run: echo "Initialization"
       - name: npm-installation
         run: npm install
+        working-directory: '02 STARTING PROJECT'
