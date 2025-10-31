@@ -7,4 +7,4 @@ jobs:
       - name: initialization
         run: echo "Initialization"
       - name: npm-installation
-        run: sh 'npm install'
+        run: npm install
