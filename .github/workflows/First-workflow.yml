@@ -6,6 +6,10 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  
       - name: npm-installation
         run: npm install
         working-directory: '02 STARTING PROJECT'
