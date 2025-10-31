@@ -6,6 +6,8 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: npm-installation
+        run: npm ci    
       - name: Run tests
         run: npm test
       - name: Checkout repository
@@ -15,15 +17,13 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4 
-      - name: npm-installation
-        run: npm ci  
       - name: build-project
         run: npm run build
       - name: build-project
         run: sh "echo Build is done........"
-  Deployement:
+  Deployment:
     runs-on: ubuntu-latest
     steps: 
       - name: build-project
-        run: echo "Deployement Done........"   
+        run: echo "Deployment Done........"
 
