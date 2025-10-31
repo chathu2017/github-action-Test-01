@@ -1,0 +1,10 @@
+name: nodejs-project
+on: workflow_dispatch
+jobs:
+  stage-01:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: initialization
+        run: echo "Initialization"
+      - name: npm-installation
+        run: sh 'npm install'
