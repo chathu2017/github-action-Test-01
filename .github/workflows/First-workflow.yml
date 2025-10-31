@@ -14,6 +14,7 @@ jobs:
         run: echo "Tests are done........"
   Build:
     runs-on: ubuntu-latest
+    needs: nodejs-tests
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4 
@@ -23,6 +24,7 @@ jobs:
         run: sh "echo Build is done........"
   Deployment:
     runs-on: ubuntu-latest
+    needs: Build
     steps: 
       - name: build-project
         run: echo "Deployment Done........"
