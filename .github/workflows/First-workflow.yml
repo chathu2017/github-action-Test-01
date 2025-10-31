@@ -7,5 +7,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4  
       - name: npm-installation
-        run: npm install
+        run: npm ci
 
