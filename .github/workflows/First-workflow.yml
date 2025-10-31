@@ -19,11 +19,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4 
       - name: npm-installation
-        run: npm ci   
+        run: npm install 
       - name: build-project
         run: npm run build
       - name: build-project
-        run: sh "echo Build is done........"
+        run: echo "Build is done........"
   Deployment:
     runs-on: ubuntu-latest
     needs: Build
