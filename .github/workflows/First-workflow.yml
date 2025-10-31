@@ -5,15 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
-        uses: actions/checkout@v4  
-      - name: npm-installation
-        run: npm ci
+        uses: echo "checkout repository........"
+
         
   Build:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4 
+      - name: npm-installation
+        run: npm ci  
       - name: build-project
         run: npm run build
   Deployement:
