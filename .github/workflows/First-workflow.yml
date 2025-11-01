@@ -1,5 +1,10 @@
 name: nodejs-project
-on: push
+on: 
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/**'  
 jobs:
   nodejs-tests:
     runs-on: ubuntu-latest
