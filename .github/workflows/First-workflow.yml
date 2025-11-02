@@ -49,3 +49,5 @@ jobs:
         with:
           name: build-artifact
           # path: ./dist
+      - name: Output-message
+        run: ls
