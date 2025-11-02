@@ -79,3 +79,11 @@ jobs:
         run: echo "${{ needs.Build.outputs.scriptfile }}"
       - name: env-check
         run: echo "MONGODB_USERNAME is ${{ env.MONGODB_USERNAME }}"  
+      - name: Debug secret availability
+        run: |
+          if [ -z "${{ env.MONGODB_USERNAME }}" ]; then
+            echo "❌ Secret is missing"
+          else
+            echo "✅ Secret is available"
+          fi
+
