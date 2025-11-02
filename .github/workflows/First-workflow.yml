@@ -5,9 +5,10 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/**'  
+    
 jobs:
   nodejs-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,6 +21,8 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     needs: nodejs-tests
+    outputs:
+      scriptfile: ${{ steps.publish-js.outputs.scriptfile }}
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4 
@@ -29,6 +32,9 @@ jobs:
         run: npm run build
       - name: build-project
         run: echo "Build is done........"
+      - name: Publish js filename
+        id: publish-js
+        run: find dist/assets/*.js -type f -execdir echo 'scriptfile={}' >> $GITHUB_OUTPUT ';'
       - name: upload-artifact
         uses: actions/upload-artifact@v4
         with:
@@ -51,3 +57,5 @@ jobs:
           # path: ./dist
       - name: Output-message
         run: ls
+      - name: Output-filename
+        run: echo "${{ needs.Build.outputs.scriptfile }}"
